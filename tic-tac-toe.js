@@ -112,8 +112,13 @@ window.onload = function(){
             
 
     }
-
     }
+
+    var new_game =document.getElementById("game").getElementsByClassName("btn")
+    //when new_game button is clicked page is refreshed.
+    new_game[0].addEventListener("click",function(){
+        window.location.reload(true);
+    })
 
 
 }
