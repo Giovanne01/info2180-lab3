@@ -15,7 +15,7 @@ window.onload = function(){
                   //sets specific div/tile clicked innerHTML to X
                   element.innerHTML = "X";
                   element.setAttribute("class", "square X");
-                  //counter is incremented inorder to follow the amount of possible moves in game
+                  //counter is incremented inorder to follow the amount of possible moves in game and also the type of move
                   counter++;
                                    
               }
@@ -23,11 +23,30 @@ window.onload = function(){
                   //sets specific div clicked innerHTML to O
                   element.innerHTML = "O";
                   element.setAttribute("class", "square O");
-                  //counter is incremented inorder to follow the amount of possible moves in game
+                  //counter is incremented inorder to follow the amount of possible moves in game and also the type of move
                   counter++;
               }
              
             });
+
+        //Add an event listener for hovering
+        element.addEventListener('mouseover',function(){
+            element.classList.add('hover');      
+        });
+
+        // This event listener is waiting on the mouse to leave div to revert it back to it's original class
+        element.addEventListener('mouseout',function(){
+            if (element.innerHTML == "X"){element.setAttribute("class","square X"); 
+            }
+            else if (element.innerHTML == "O"){
+                element.setAttribute("class","square O"); 
+            }
+            else{
+                element.setAttribute("class","square")
+            }
+
+                    
+        });
 
     });
 
